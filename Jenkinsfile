@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Apeksha-Math/Jenkins.git']])
+                checkout scmGit(branches: [[name: '*/dev1']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Apeksha-Math/Jenkins.git']])
             }
         }
         stage('Build'){
             steps{
-                git branch: 'main', url: 'https://github.com/Apeksha-Math/Jenkins.git'
+                git branch: 'dev1', url: 'https://github.com/Apeksha-Math/Jenkins.git'
                 // bat 'python simplecode.py'
             }
         }
